@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Ritik Padhy" />
+  <title>Developing Data Products : R Markdown Presentation &amp; Plotly</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Developing Data Products : R Markdown Presentation
+&amp; Plotly</h1>
+<p class="author">Ritik Padhy</p>
+<p class="date">Oct 28, 2023</p>
+</header>
+<h2 class="smaller" id="synopsis">Synopsis</h2>
+<p>Following instructions have been given for the assignment -</p>
+<ol type="1">
+<li>Create a web page presentation using R Markdown that features a plot
+created with Plotly.<br />
+</li>
+<li>Host your webpage on either RPubs, GitHub Pages, or NeoCities.<br />
+</li>
+<li>Your webpage must contain the date that you created the document,
+and it must contain a plot created with Plotly.</li>
+</ol>
+<p>The <strong>Interactive Plots</strong> presented in this Assignment
+are as follows -</p>
+<ol type="1">
+<li>A <strong>Heatmap</strong> depicting the Daily Ozone Levels in New
+York over a period of 5 months (May to September 1973).</li>
+<li>A <strong>Time-Series chart</strong> of the Population of the United
+States (in millions) for the period 1790-1970.</li>
+</ol>
+<h2 class="smaller" id="data-processing-for-plot-1-heatmap-r-code">Data
+Processing for Plot 1 : Heatmap R Code</h2>
+<p>```{r results=‘hide’}
+library(datasets);library(plotly);library(reshape2) data(“airquality”)
+## Load the airquality dataset</p>
+<p>airquality<span
+class="math inline"><em>M</em><em>o</em><em>n</em><em>t</em><em>h</em> = <em>a</em><em>s</em>.<em>f</em><em>a</em><em>c</em><em>t</em><em>o</em><em>r</em>(<em>a</em><em>i</em><em>r</em><em>q</em><em>u</em><em>a</em><em>l</em><em>i</em><em>t</em><em>y</em></span>Month)
+## Convert Month to factor ozone_daily=airquality[,c(1,5,6)] ## Extract
+Ozone, Month and Day columns</p>
+<h2 id="convert-long-format-to-wide-for-input-to-heatmap">Convert Long
+format to Wide for input to Heatmap</h2>
+<p>ozone_daily=dcast(ozone_daily,Day~Month,value.var = “Ozone”)
+ozone_daily=as.matrix(ozone_daily[,-1]) ## Convert to Matrix
+colnames(ozone_daily)=c(“May”,“June”,“July”,“August”,“September”)</p>
+<h2 id="plotly-command">Plotly command</h2>
+<p>plot_ly(z=ozone_daily,colorscale=“Hot”,x=colnames(ozone_daily),type=“heatmap”,colorbar
+= list(title = “Ozone Levels (parts per billion)”))%&gt;%layout(title =
+“Daily Ozone Levels in New York, May to September 1973”, xaxis =
+list(title = “Month”),yaxis = list(title = “Day”))</p>
+<pre><code>
+## Plotly - Interactive Plot 1: Heatmap
+
+```{r echo=FALSE}
+library(datasets);library(plotly);library(reshape2)
+data(&quot;airquality&quot;) ## Load the airquality dataset
+
+airquality$Month=as.factor(airquality$Month) ## Convert Month to factor
+ozone_daily=airquality[,c(1,5,6)] ## Extract Ozone, Month and Day columns
+
+## Convert Long format to Wide for input to Heatmap
+ozone_daily=dcast(ozone_daily,Day~Month,value.var = &quot;Ozone&quot;) 
+ozone_daily=as.matrix(ozone_daily[,-1]) ## Convert to Matrix
+colnames(ozone_daily)=c(&quot;May&quot;,&quot;June&quot;,&quot;July&quot;,&quot;August&quot;,&quot;September&quot;)
+
+## Plotly command
+plot_ly(z=ozone_daily,colorscale=&quot;Hot&quot;,x=colnames(ozone_daily),type=&quot;heatmap&quot;,colorbar = list(title = &quot;Ozone Levels (parts per billion)&quot;))%&gt;%layout(title = &quot;Daily Ozone Levels in New York, May to September 1973&quot;, xaxis = list(title = &quot;Month&quot;),yaxis = list(title = &quot;Day&quot;))</code></pre>
+<h2 class="smaller" id="plot-2-time-series-chart-r-code">Plot 2 :
+Time-Series Chart R Code</h2>
+<p>```{r results=‘hide’} library(datasets) library(plotly) data(uspop)
+## Load the data set that gives the population of the United States ##
+(in millions) as recorded by the decennial census for the period
+1790–1970.</p>
+<h2 id="plotly-command-1">Plotly Command</h2>
+<p>plot_ly(x=<sub>time(uspop),y=</sub>uspop,type=“scatter”,mode=“lines”)
+%&gt;% layout(title = “U.S. Population in millions for the period
+1790-1970”, xaxis = list(title = “Year”),yaxis = list(title = “U.S.
+Population (millions)”))</p>
+<pre><code>
+## Plotly - Interactive Plot 2: Time-Series Chart
+
+```{r echo=FALSE}
+library(datasets)
+library(plotly)
+data(uspop) ## Load the data set that gives the population of the United States in millions for the period 1790-1970
+
+## Plotly Command
+plot_ly(x=~time(uspop),y=~uspop,type=&quot;scatter&quot;,mode=&quot;lines&quot;) %&gt;% layout(title = &quot;U.S. Population in millions for the period 1790-1970&quot;, xaxis = list(title = &quot;Year&quot;),yaxis = list(title = &quot;U.S. Population (millions)&quot;))</code></pre>
+<h2 id="thank-you">Thank You!</h2>
+</body>
+</html>
